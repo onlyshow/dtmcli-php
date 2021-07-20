@@ -1,0 +1,90 @@
+2021-07-19 09:19:12 pid:40850 Workerman[test.php] start in DEBUG mode
+2021-07-19 09:21:35 pid:40853 RuntimeException: Error creating resource: http://192.168.69.128:8080/api/dtmsvr/newGid in /mnt/hgfs/work/dtmcli-php/vendor/mix/guzzle/src/Handler/StreamHandler.php:330
+Stack trace:
+#0 /mnt/hgfs/work/dtmcli-php/vendor/mix/guzzle/src/Handler/StreamHandler.php(246): Mix\Guzzle\Handler\StreamHandler->Mix\Guzzle\Handler\{closure}()
+#1 /mnt/hgfs/work/dtmcli-php/vendor/mix/guzzle/src/Handler/StreamHandler.php(343): Mix\Guzzle\Handler\StreamHandler->createResource()
+#2 /mnt/hgfs/work/dtmcli-php/vendor/mix/guzzle/src/Handler/StreamHandler.php(52): Mix\Guzzle\Handler\StreamHandler->createStream()
+#3 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): Mix\Guzzle\Handler\StreamHandler->__invoke()
+#4 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(51): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}()
+#5 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(37): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}()
+#6 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Middleware.php(29): GuzzleHttp\PrepareBodyMiddleware->__invoke()
+#7 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(70): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#8 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Middleware.php(59): GuzzleHttp\RedirectMiddleware->__invoke()
+#9 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/HandlerStack.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#10 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(351): GuzzleHttp\HandlerStack->__invoke()
+#11 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(162): GuzzleHttp\Client->transfer()
+#12 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(182): GuzzleHttp\Client->requestAsync()
+#13 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(95): GuzzleHttp\Client->request()
+#14 /mnt/hgfs/work/dtmcli-php/src/functions.php(13): GuzzleHttp\Client->__call()
+#15 /mnt/hgfs/work/dtmcli-php/src/functions.php(38): Dtmcli\genGid()
+#16 /mnt/hgfs/work/dtmcli-php/tests/test.php(17): Dtmcli\tccGlobalTransaction()
+#17 /mnt/hgfs/work/dtmcli-php/tests/test.php(42): FireTcc()
+#18 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Context.php(115): {closure}()
+#19 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(193): Mix\Vega\Context->next()
+#20 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Context.php(115): Mix\Vega\Engine->Mix\Vega\{closure}()
+#21 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(167): Mix\Vega\Context->next()
+#22 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(157): Mix\Vega\Engine->Mix\Vega\{closure}()
+#23 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Route.php(54): Mix\Vega\Engine->runHandlers()
+#24 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(137): Mix\Vega\Route->Mix\Vega\{closure}()
+#25 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Engine.php(66): Mix\Vega\Engine->dispatch()
+#26 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Connection/TcpConnection.php(637): Mix\Vega\Engine->Mix\Vega\{closure}()
+#27 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Events/Select.php(293): Workerman\Connection\TcpConnection->baseRead()
+#28 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\Select->loop()
+#29 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1554): Workerman\Worker->run()
+#30 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1384): Workerman\Worker::forkOneWorkerForLinux()
+#31 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1358): Workerman\Worker::forkWorkersForLinux()
+#32 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#33 /mnt/hgfs/work/dtmcli-php/tests/test.php(49): Workerman\Worker::runAll()
+#34 {main}
+
+Next GuzzleHttp\Exception\RequestException: Error creating resource: http://192.168.69.128:8080/api/dtmsvr/newGid in /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:52
+Stack trace:
+#0 /mnt/hgfs/work/dtmcli-php/vendor/mix/guzzle/src/Handler/StreamHandler.php(68): GuzzleHttp\Exception\RequestException::wrapException()
+#1 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): Mix\Guzzle\Handler\StreamHandler->__invoke()
+#2 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(51): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}()
+#3 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(37): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}()
+#4 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Middleware.php(29): GuzzleHttp\PrepareBodyMiddleware->__invoke()
+#5 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php(70): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#6 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Middleware.php(59): GuzzleHttp\RedirectMiddleware->__invoke()
+#7 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/HandlerStack.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}()
+#8 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(351): GuzzleHttp\HandlerStack->__invoke()
+#9 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(162): GuzzleHttp\Client->transfer()
+#10 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(182): GuzzleHttp\Client->requestAsync()
+#11 /mnt/hgfs/work/dtmcli-php/vendor/guzzlehttp/guzzle/src/Client.php(95): GuzzleHttp\Client->request()
+#12 /mnt/hgfs/work/dtmcli-php/src/functions.php(13): GuzzleHttp\Client->__call()
+#13 /mnt/hgfs/work/dtmcli-php/src/functions.php(38): Dtmcli\genGid()
+#14 /mnt/hgfs/work/dtmcli-php/tests/test.php(17): Dtmcli\tccGlobalTransaction()
+#15 /mnt/hgfs/work/dtmcli-php/tests/test.php(42): FireTcc()
+#16 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Context.php(115): {closure}()
+#17 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(193): Mix\Vega\Context->next()
+#18 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Context.php(115): Mix\Vega\Engine->Mix\Vega\{closure}()
+#19 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(167): Mix\Vega\Context->next()
+#20 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(157): Mix\Vega\Engine->Mix\Vega\{closure}()
+#21 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Route.php(54): Mix\Vega\Engine->runHandlers()
+#22 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Router.php(137): Mix\Vega\Route->Mix\Vega\{closure}()
+#23 /mnt/hgfs/work/dtmcli-php/vendor/mix/vega/src/Engine.php(66): Mix\Vega\Engine->dispatch()
+#24 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Connection/TcpConnection.php(637): Mix\Vega\Engine->Mix\Vega\{closure}()
+#25 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Events/Select.php(293): Workerman\Connection\TcpConnection->baseRead()
+#26 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\Select->loop()
+#27 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1554): Workerman\Worker->run()
+#28 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1384): Workerman\Worker::forkOneWorkerForLinux()
+#29 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(1358): Workerman\Worker::forkWorkersForLinux()
+#30 /mnt/hgfs/work/dtmcli-php/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#31 /mnt/hgfs/work/dtmcli-php/tests/test.php(49): Workerman\Worker::runAll()
+#32 {main}
+2021-07-19 09:21:35 pid:40853 Worker[40853] process terminated
+2021-07-19 09:21:35 pid:40850 worker[none:40853] exit with status 64000
+2021-07-20 01:48:58 pid:43499 Workerman[test.php] start in DEBUG mode
+2021-07-20 01:48:58 pid:43499 Workerman[test.php] already running
+2021-07-20 01:49:05 pid:43502 Workerman[test.php] stop 
+2021-07-20 01:49:05 pid:43502 Workerman[test.php] is stopping ...
+2021-07-20 01:49:05 pid:40850 Workerman[test.php] stopping ...
+2021-07-20 01:49:05 pid:40850 Workerman[test.php] has been stopped
+2021-07-20 01:49:05 pid:43502 Workerman[test.php] stop success
+2021-07-20 01:49:10 pid:43503 Workerman[test.php] start in DEBUG mode
+2021-07-20 02:02:41 pid:43503 Workerman[test.php] stopping ...
+2021-07-20 02:02:41 pid:43503 Workerman[test.php] has been stopped
+2021-07-20 02:02:44 pid:43954 Workerman[test.php] start in DEBUG mode
+2021-07-20 02:04:03 pid:43954 Workerman[test.php] stopping ...
+2021-07-20 02:04:03 pid:43954 Workerman[test.php] has been stopped
+2021-07-20 02:04:05 pid:43995 Workerman[test.php] start in DEBUG mode
